@@ -87,10 +87,9 @@ function cus_author_saveCustomField($post_id) {
 
 add_filter('the_author', 'cus_author_the_author');
 function cus_author_the_author($author) {
-	$custom_author = get_post_meta(get_the_ID(), '_custom_author_name');
-	if ($custom_author[0]) {
-		return $custom_author[0];
-	} else {
-		return $author;
+	$custom_author = get_post_meta(get_the_ID(), '_custom_author_name', true);
+	if ($custom_author) {
+		return $custom_author;
 	}
+	return $author;
 }
