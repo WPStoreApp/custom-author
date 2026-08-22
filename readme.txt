@@ -1,12 +1,12 @@
 === 自定义作者名称 ===
 Contributors: bestony
-Donate link: https://www.ixiqin.com/exceptional/
+Donate link: https://wpstore.app/donate/
 Tags: author
 Requires at least: 4.6
-Tested up to: 4.9.5
+Tested up to: 7.1
 Stable tag: 1.2
 Requires PHP: 7.0.0
-License: GPLv2 
+License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 帮助你在发布文章时自定义作者信息
@@ -22,6 +22,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
-
-= 1.0 =
+=== 1.2 ===
+* change url
+==== 1.0 ====
 * 初始化项目

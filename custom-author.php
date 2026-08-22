@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: 	Custom Author
-Plugin URI: 	https://www.ixiqin.com/2018/06/wordpress-custom-author-plugin/
+Plugin URI: 	https://wpstore.app/archives/custom-author/
 Description: 	自定义作者插件
-Version: 		1.0
+Version: 		1.2
 Author: 		Bestony
-Author URI: 	https://www.ixiqin.com/
+Author URI: 	https://wpstore.app/
 License: 		GPL2
 License URI:  	https://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -23,7 +23,6 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-
 add_action('post_submitbox_misc_actions', 'cus_author_createCustomField');
 add_action('save_post', 'cus_author_saveCustomField');
 /** 创建一个checkBox */
@@ -40,12 +39,12 @@ function cus_author_createCustomField() {
 	/**
 	 * 添加 nonce 安全处理
 	 */
-	wp_nonce_field('custom_author_nonce' , 'custom_author_nonce');
+	wp_nonce_field('custom_author_nonce', 'custom_author_nonce');
 	?>
     <div class="misc-pub-section misc-pub-section-last dashicons-before dashicons-admin-users">
         <label><b>作者：</b><input type="text" value="<?php echo $value ?>" name="_custom_author_name" /></label>
     </div>
-    <?php   
+    <?php
 }
 /**
  * 保存配置信息
@@ -86,10 +85,10 @@ function cus_author_saveCustomField($post_id) {
 	}
 }
 
-add_filter('the_author','cus_author_the_author');
-function cus_author_the_author($author){
-    $custom_author = get_post_meta(get_the_ID(), '_custom_author_name');
-    if ($custom_author) {
+add_filter('the_author', 'cus_author_the_author');
+function cus_author_the_author($author) {
+	$custom_author = get_post_meta(get_the_ID(), '_custom_author_name');
+	if ($custom_author[0]) {
 		return $custom_author[0];
 	} else {
 		return $author;
